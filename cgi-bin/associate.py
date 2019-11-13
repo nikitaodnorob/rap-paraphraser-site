@@ -4,7 +4,8 @@ import warnings
 warnings.filterwarnings("ignore")
 
 import io, cgi, cgitb, sys, re, gensim
-import pymorphy2 as pm 
+import pymorphy2 as pm
+import os
 
 cgitb.enable()
 
@@ -23,7 +24,8 @@ else:
 import gensim
 from gensim.test.utils import datapath
 
-model = gensim.models.KeyedVectors.load_word2vec_format(datapath("D:\\Windows\\Programs\\OpenServer\\OSPanel\\domains\\rap\\cgi-bin\\model.bin"), binary=True)
+directory = os.path.dirname(__file__)
+model = gensim.models.KeyedVectors.load_word2vec_format(datapath(directory + "/model.bin"), binary=True)
 
 m = pm.MorphAnalyzer() 
 
