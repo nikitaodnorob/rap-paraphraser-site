@@ -1,4 +1,5 @@
 import React from "react"
+import {Link} from "react-router-dom";
 
 export const MainPage = () => {
     return (
@@ -12,10 +13,10 @@ export const MainPage = () => {
             </p>
             <p className="center">На нашем сайте Вы можете:</p>
             <p className="center">
-                <a>перефразировать текст</a><br/>
-                <a>подобрать слова-ассоциаты</a>
+                {/*<a>перефразировать текст</a><br/>*/}
+                <Link to="/associations">подобрать слова-ассоциаты</Link>
             </p>
-            <p className="center">а так же просмотреть примеры:</p>
+            {/*<p className="center">а так же просмотреть примеры:</p>*/}
         </React.Fragment>
     )
 };

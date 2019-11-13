@@ -1,5 +1,6 @@
 import React from "react"
 import $ from "jquery"
+import {Link} from "react-router-dom";
 
 export class AssociationsPage extends React.Component {
 
@@ -62,8 +63,8 @@ export class AssociationsPage extends React.Component {
                         <p>Слова ассоциаты:</p>
                         <div id="result">{ res }</div>
                         <div>
-                            <a>Перейти на стартовую страницу</a><br/>
-                            <a>Перейти к перефразировке текста</a>
+                            <Link to="/">Перейти на стартовую страницу</Link><br/>
+                            {/*<a>Перейти к перефразировке текста</a>*/}
                         </div>
                     </div>
                 </div>
