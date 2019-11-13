@@ -8,7 +8,7 @@ export const MainPage = () => {
             <Header/>
             <p className="center">На нашем сайте Вы можете:</p>
             <p className="center">
-                {/*<a>перефразировать текст</a><br/>*/}
+                <Link to="/paraphraser">перефразировать текст</Link><br/>
                 <Link to="/associations">подобрать слова-ассоциаты</Link>
             </p>
             {/*<p className="center">а так же просмотреть примеры:</p>*/}

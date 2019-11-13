@@ -25,7 +25,7 @@ p.center { text-align: center; }
 a, a:active, a:visited { color: rgb(0, 0, 238); }
 a:hover { color:red; }
 
-.associate-main-div {
+.main-div {
   display: flex;
 
   #div1, #div2 { width: 50%; }
@@ -34,18 +34,21 @@ a:hover { color:red; }
 
   .button-bar {
     text-align: center;
-    width: 80%;
+    width: 100%;
     margin-top: 10px;
 
     button { margin: 5px 5px; }
   }
 
-  #enterWord { width: 80%; }
+  #enterWord { width: 100%; }
+
+  #enterText { width: 100%; height: 200px; }
 
   #result {
     border: 1px solid black;
     height: 200px;
-    overflow: auto;
-    white-space: pre;
+    overflow-y: auto;
   }
+
+  .ws-pre { white-space: pre; }
 }

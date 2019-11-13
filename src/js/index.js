@@ -5,12 +5,16 @@ import { BrowserRouter, Route, Switch } from "react-router-dom"
 
 import { MainPage } from "./pages/MainPage"
 import { AssociationsPage } from "./pages/AssociationsPage";
+import { TextParaphrasePage } from "./pages/TextParaphrasePage";
 
 ReactDOM.render(
     <BrowserRouter>
         <Switch>
             <Route path="/associations">
                 <AssociationsPage/>
+            </Route>
+            <Route path="/paraphraser">
+                <TextParaphrasePage/>
             </Route>
             <Route path="/">
                 <MainPage/>

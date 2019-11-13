@@ -3,62 +3,55 @@ import $ from "jquery"
 import {Link} from "react-router-dom";
 import {Header} from "../components/Header";
 
-export class AssociationsPage extends React.Component {
+export class TextParaphrasePage extends React.Component {
 
     constructor(props) {
         super(props);
         this.clearField = this.clearField.bind(this);
-        this.searchAssociates = this.searchAssociates.bind(this);
+        this.paraphraseText = this.paraphraseText.bind(this);
         this.state = { isLoading: false, data: [] };
     }
 
     clearField() {
-        $("#enterWord").val("");
+        $("#enterText").val("");
         $("#result").text("");
     }
 
-    searchAssociates() {
-        const word = $("#enterWord").val();
+    paraphraseText() {
+        const text = $("#enterText").val();
         this.setState({ isLoading: true });
-        $.ajax("cgi-bin/associate.py", {
-            data: { word },
-            method: "GET",
+        $.ajax("cgi-bin/rephrase.py", {
+            data: { text },
+            method: "POST",
             success: (data) => {
-                this.setState({ data: JSON.parse(data), isLoading: false });
+                this.setState({ data, isLoading: false });
             }
         });
     }
 
     render() {
-
         const { data } = this.state;
-        let res = "";
-        for (let i = 0; i < data.length; i++) {
-            const dataItem = data[i];
-            res += `${dataItem.word} (${dataItem.cos})\n`;
-        }
-
         return (
             <React.Fragment>
                 <Header/>
                 <div className="size14 main-div">
                     <div id="div1">
-                        <p>Введите слово:</p>
+                        <p>Введите текст:</p>
                         <form>
-                            <input type="text" name="word" id="enterWord" defaultValue="" className="size14"/>
+                            <textarea name="text" id="enterText" defaultValue="" className="size14"></textarea>
                             <br/>
                             <div className="button-bar">
-                                <button type="button" className="size14" onClick={this.searchAssociates}>Поиск</button>
+                                <button type="button" className="size14" onClick={this.paraphraseText}>Отправить!</button>
                                 <button type="button" className="size14" onClick={this.clearField}>Очистить</button>
                             </div>
                         </form>
                     </div>
                     <div id="div2">
-                        <p>Слова ассоциаты:</p>
-                        <div id="result" className="ws-pre">{ res }</div>
+                        <p>Измененный текст:</p>
+                        <div id="result">{data}</div>
                         <div>
                             <Link to="/">Перейти на стартовую страницу</Link><br/>
-                            <Link to="/paraphraser">Перейти к перефразировке текста</Link>
+                            <Link to="/associations">Перейти к поиску ассоциатов</Link>
                         </div>
                     </div>
                 </div>
