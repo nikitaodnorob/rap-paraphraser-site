@@ -3,5 +3,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import { MainPage } from "./pages/MainPage"
+import { AssociationsPage } from "./pages/AssociationsPage";
 
-ReactDOM.render(<MainPage />, document.getElementById('root'));
+ReactDOM.render(<AssociationsPage />, document.getElementById('root'));
