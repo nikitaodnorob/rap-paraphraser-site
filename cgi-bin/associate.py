@@ -73,7 +73,7 @@ def get_associat(word):
     try:
         res = "["
         for x in model.most_similar(positive=lemma):
-            res += "{word: \"" + x[0].split('_')[0] + "\", cos:" + str(x[1]) + "},\n"
+            res += "{\"word\": \"" + x[0].split('_')[0] + "\", \"cos\":" + str(x[1]) + "},\n"
         res = res[0: len(res) - 2] + "]"
     except(Exception):
         res = "{error: \"notFound\"}"

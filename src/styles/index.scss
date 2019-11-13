@@ -42,5 +42,7 @@ p.center { text-align: center; }
   #result {
     border: 1px solid black;
     height: 200px;
+    overflow: auto;
+    white-space: pre;
   }
 }

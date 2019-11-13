@@ -7,25 +7,35 @@ export class AssociationsPage extends React.Component {
         super(props);
         this.clearField = this.clearField.bind(this);
         this.searchAssociates = this.searchAssociates.bind(this);
-        this.state = { isLoading: false };
+        this.state = { isLoading: false, data: [] };
     }
 
     clearField() {
         $("#enterWord").val("");
+        $("#result").text("");
     }
 
     searchAssociates() {
         const word = $("#enterWord").val();
+        this.setState({ isLoading: true });
         $.ajax("cgi-bin/associate.py", {
             data: { word },
             method: "GET",
             success: (data) => {
-                console.log(data);
+                this.setState({ data: JSON.parse(data), isLoading: false });
             }
-        })
+        });
     }
 
     render() {
+
+        const { data } = this.state;
+        let res = "";
+        for (let i = 0; i < data.length; i++) {
+            const dataItem = data[i];
+            res += `${dataItem.word} (${dataItem.cos})\n`;
+        }
+
         return (
             <React.Fragment>
                 <h1>Rap-Paraphraser</h1>
@@ -50,7 +60,7 @@ export class AssociationsPage extends React.Component {
                     </div>
                     <div id="div2">
                         <p>Слова ассоциаты:</p>
-                        <div id="result"></div>
+                        <div id="result">{ res }</div>
                         <div>
                             <a>Перейти на стартовую страницу</a><br/>
                             <a>Перейти к перефразировке текста</a>
