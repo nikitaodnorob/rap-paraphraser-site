@@ -1,6 +1,7 @@
 import React from "react"
 import $ from "jquery"
 import {Link} from "react-router-dom";
+import {Header} from "../components/Header";
 
 export class AssociationsPage extends React.Component {
 
@@ -39,14 +40,7 @@ export class AssociationsPage extends React.Component {
 
         return (
             <React.Fragment>
-                <h1>Rap-Paraphraser</h1>
-                <p id="p1">
-                    Добро пожаловать на сайт для перефразирования текста любого типа (в том числе и одного слова) в
-                    семантическом поле русского репа с добавлением реп-сленга. Алгоритм перефразирования основан на
-                    использовании нейронной сети Word2Vec, обученной на текстах более, чем 9500 песен русских
-                    исполнителей,
-                    которая находит близкие по семантике слова в контексте русского репа.
-                </p>
+                <Header/>
                 <div className="size14 associate-main-div">
                     <div id="div1">
                         <p>Введите слово:</p>
