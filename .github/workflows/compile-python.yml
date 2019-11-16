@@ -6,5 +6,7 @@ jobs:
     name: Compile Python
     runs-on: ubuntu-18.04
     steps:
-      - name: Install Python packages
-        run: pip install
+      - name: Install gensim Python package
+        run: pip install gensim
+      - name: Install pymorphy2 Python package
+          run: pip install pymorphy2
