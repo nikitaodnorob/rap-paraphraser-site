@@ -1,8 +1,6 @@
 name: Compile Python
 on:
   push:
-    branches:
-      - master
   pull_request:
     branches:
       - master
@@ -17,6 +15,6 @@ jobs:
       - name: Install pymorphy2 Python package
         run: pip install pymorphy2
       - name: Compile associate.py
-        run: python -m py_compile ./cgi-bin/associate.py
+        run: python -m py_compile /cgi-bin/associate.py
       - name: Compile rephrase.py
-        run: python -m py_compile ./cgi-bin/rephrase.py
+        run: python -m py_compile /cgi-bin/rephrase.py
