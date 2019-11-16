@@ -4,6 +4,10 @@
 добавлением реп-сленга. Алгоритм перефразирования основан на использовании нейронной сети Word2Vec, обученной на 
 текстах более чем 9500 песен русских исполнителей, которая находит близкие по семантике слова в контексте русского репа
 
+<a href="https://github.com/nikitaodnorob/rap-paraphraser">
+  <img alt="Build status" src="https://github.com/nikitaodnorob/rap-paraphraser/workflows/Build/badge.svg">
+</a>
+
 ### Как запустить
 
 Проект разрабатывался на Python 3.7
