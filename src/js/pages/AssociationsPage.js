@@ -29,7 +29,7 @@ export class AssociationsPage extends React.Component {
         });
     }
 
-    render() 
+    render() {
 
         const { data = [] } = this.state;
         let res = "";
