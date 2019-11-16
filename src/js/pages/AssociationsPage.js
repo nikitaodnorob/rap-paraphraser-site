@@ -31,7 +31,7 @@ export class AssociationsPage extends React.Component {
 
     render() {
 
-        const { data } = this.state;
+        const { data = [] } = this.state;
         let res = "";
         for (let i = 0; i < data.length; i++) {
             const dataItem = data[i];

@@ -7,7 +7,6 @@ import {BrowserRouter, Route, Switch, Redirect} from "react-router-dom"
 export const App = () => {
     const urlParams = new URLSearchParams(location.search);
     const pageRequest = urlParams.get("page");
-    console.log({pathname: `/${pageRequest}`});
     return (
         <BrowserRouter>
             <Switch>

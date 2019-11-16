@@ -1,4 +1,13 @@
-export const getTextWithReplaces = (text, replaces) => {
+/**
+ * Apply replaces to text
+ * @param {string} text
+ * @param {Object[]} replaces
+ * @param {number} replaces[].position
+ * @param {string} replaces[].oldWord
+ * @param {string} replaces[].newWord
+ * @returns {string}
+ */
+export const getTextWithReplaces = (text, replaces = []) => {
     if (replaces.length === 0) return text;
     let resultText = "";
     if (replaces[0].position > 0) resultText += text.substring(0, replaces[0].position);

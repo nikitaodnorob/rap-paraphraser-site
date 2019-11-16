@@ -17,7 +17,7 @@ export class TextParaphrasePage extends React.Component {
         $("#enterText").val("");
         $("#result").text("");
     }
-    
+
     paraphraseText() {
         const text = $("#enterText").val();
         this.setState({ isLoading: true });
@@ -31,7 +31,7 @@ export class TextParaphrasePage extends React.Component {
     }
 
     render() {
-        const { data } = this.state;
+        const { data = "" } = this.state;
         return (
             <React.Fragment>
                 <Header/>
