@@ -9,4 +9,4 @@ jobs:
       - name: Install gensim Python package
         run: pip install gensim
       - name: Install pymorphy2 Python package
-          run: pip install pymorphy2
+        run: pip install pymorphy2
