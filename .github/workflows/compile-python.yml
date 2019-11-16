@@ -1,0 +1,10 @@
+name: Compile Python
+on: [push, pull_request]
+
+jobs:
+  compile:
+    name: Compile Python
+    runs-on: ubuntu-18.04
+    steps:
+      name: Install Python packages
+      run: pip install
