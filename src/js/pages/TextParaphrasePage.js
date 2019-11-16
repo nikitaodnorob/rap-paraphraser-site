@@ -2,6 +2,7 @@ import React from "react"
 import $ from "jquery"
 import {Link} from "react-router-dom";
 import {Header} from "../components/Header";
+import {getTextWithReplaces} from "../helpers/replaceText";
 
 export class TextParaphrasePage extends React.Component {
 
@@ -16,7 +17,7 @@ export class TextParaphrasePage extends React.Component {
         $("#enterText").val("");
         $("#result").text("");
     }
-
+    
     paraphraseText() {
         const text = $("#enterText").val();
         this.setState({ isLoading: true });
@@ -24,7 +25,7 @@ export class TextParaphrasePage extends React.Component {
             data: { text },
             method: "POST",
             success: (data) => {
-                this.setState({ data, isLoading: false });
+                this.setState({ data: getTextWithReplaces(text, JSON.parse(data)), isLoading: false });
             }
         });
     }
@@ -48,7 +49,7 @@ export class TextParaphrasePage extends React.Component {
                     </div>
                     <div id="div2">
                         <p>Измененный текст:</p>
-                        <div id="result">{data}</div>
+                        <div id="result" className="ws-pre-wrap">{data}</div>
                         <div>
                             <Link to="/">Перейти на стартовую страницу</Link><br/>
                             <Link to="/associations">Перейти к поиску ассоциатов</Link>

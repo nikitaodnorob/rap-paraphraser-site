@@ -3,56 +3,18 @@
 import warnings
 warnings.filterwarnings("ignore")
 
-import io, cgi, cgitb, sys, re, gensim
-import pymorphy2 as pm
-import os
-
-cgitb.enable()
-
-if hasattr(sys.stdout, "buffer"):
-  def bwrite(s):
-    sys.stdout.flush()
-    sys.stdout.buffer.write(s)
-  write = sys.stdout.write
-else:
-  wrapper = io.TextIOWrapper(sys.stdout)
-  def bwrite(s):
-    wrapper.flush()
-    sys.stdout.write(s)
-  write = wrapper.write
-
+import cgi, re, gensim, pymorphy2 as pm, os
 import gensim
 from gensim.test.utils import datapath
+from writter import bwrite
+from semantic import convertTags, getWordWithTag
 
 directory = os.path.dirname(__file__)
 model = gensim.models.KeyedVectors.load_word2vec_format(datapath(directory + "/model.bin"), binary=True)
 
 m = pm.MorphAnalyzer()
 
-def replace(x):
-    return {
-        'A':  'ADJ',
-        'ANUM' : 'ADJ',
-        'ADJF' : 'ADJ',
-        'ADV' : 'ADV',
-        'ADVB' : 'ADV',
-        'COMP' : 'ADV',
-        'GRND' : 'VERB',
-        'INFN' : 'VERB',
-        'NOUN' : 'NOUN',
-        'PRED' : 'ADV',
-        'PRTF' : 'ADJ',
-        'PRTS' : 'VERB',
-        'VERB' : 'VERB',
-        'PREP' : 'PREP',
-        'CONJ' : 'CONJ',
-        'PRCL' : 'PRCL',
-        'INTJ' : 'INTJ',
-        'NUMR' : 'NUM',
-        'NPRO' : 'PRON'
-    }[x]
-
-def new_tag_list(a):
+def getWordProperties(a):
       arr = []
       arr2 = []
       tup = tuple()
@@ -83,30 +45,15 @@ def new_tag_list(a):
       else:
         return None
 
-def my_tag_normal(str): 
-    bb0 = m.parse(str)[0].normal_form 
-    bb = m.parse(bb0)[0].tag.POS 
-    if(bb is None): 
-        bb1 = 'X' 
-    else:
-        try:
-            bb1 = replace(bb)  
-        except(Exception):
-            bb1 = 'X'
-    a1 = bb0 + '_' + bb1 
-    return a1
-
-def get_associat(word): 
-    #word - слово
-    lemma = my_tag_normal(word)
-    features = new_tag_list(word+'_'+lemma.split('_')[1])
+def getAssociat(word): #word - слово
+    lemma = getWordWithTag(word, m)
+    features = getWordProperties(word+'_'+lemma.split('_')[1])
     if features is None:
         return word
     old_tl = features[0]
     nec = features[1]
     try:
         a = model.most_similar(positive=lemma)
-        # print(a)
     except(Exception):
         return word
     for x in a:
@@ -170,55 +117,36 @@ def get_associat(word):
                 return m.parse(w_arr[0])[0].inflect(set(old_tl))[0]
     return word
 
-#Анализ текста и вывод результата
-def text_analys(text):
-    res = {'second': '', 'last': ''}
-    if text != "":
-        cur_i = 0
-        for w in re.split('[ ?!\\.\\,:;\\(\\)\\n"]', text):
-            if res['last'] != "":
-                res['second'] += res['last']
-                res['last'] = ''
-             
-            len_w = len(w)
-            #сохраняем фрагмент текста, в котором возможно будет замена
-            if cur_i+len_w+1 > len(text):
-                res['last'] = text[cur_i:cur_i+len_w]
-            else:
-                res['last'] = text[cur_i:cur_i+len_w+1] 
-            cur_i += len_w + 1
+def rephraseText(text):
+	cur_i = 0
+	res = "["
+	if text != "":
+		for w in re.split('[ ?!\\.\\,:;\\(\\)\\n"]', text):
+			if w == "":
+				continue
 
-            if w == "":
-                continue 
-
-            #убираем тире в начале слова
-            if w[0] == '-':
-                word = str(w[1:])
-            else:
-                word = w
-            #уберем пробельные символы
-            word = word.strip()
-            if word == "" or word == "-":
-                continue
-
-            try:
-                word2 = get_associat(word) #слово, замененное сетью на реп-эквивалент
-            except:
-                word2 = word
-            if word == word2:
-                res['second'] += res['last']
-            else:
-                #res['second'] += res['last'].replace(word, "<b>"+word2+"</b>",1)
-                res['second'] += res['last'].replace(word, word2, 1)
-            res['last'] = ''
+			if w[0] == '-': #убираем тире в начале слова
+				word = str(w[1:])
+			else:
+				word = w
             
-        if res['last'] != "":
-            res['second'] += res['last']
-            res['last'] = ''
-    return res['second']
+			word = word.strip() #уберем пробельные символы
+			if word == "" or word == "-":
+				continue
 
-form = cgi.FieldStorage()
-text = form.getfirst("text", "")
+			cur_i = text.find(word, cur_i)
 
-write("Content-type: text/html; charset=utf-8\n\n")
-bwrite(text_analys(text).encode())
+			try:
+				word2 = getAssociat(word) #слово, замененное сетью на реп-эквивалент
+			except:
+				word2 = word
+			if word != word2:
+				res += "{\"position\": " + str(cur_i) + ", \"oldWord\": \"" + word + "\", \"newWord\": \"" + word2 + "\"},\n"
+		if res != "[" :
+			res = res[0: len(res) - 2]
+	return res + "]"
+
+text = cgi.FieldStorage().getfirst("text", "")
+
+print("Content-type: text/html; charset=utf-8\n")
+bwrite(rephraseText(text).encode())
