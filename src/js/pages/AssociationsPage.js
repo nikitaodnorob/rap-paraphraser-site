@@ -2,6 +2,7 @@ import React from "react"
 import $ from "jquery"
 import {Link} from "react-router-dom";
 import {Header} from "../components/Header";
+import {ResultField} from "../components/ResultField";
 
 export class AssociationsPage extends React.Component {
 
@@ -31,7 +32,7 @@ export class AssociationsPage extends React.Component {
 
     render() {
 
-        const { data = [] } = this.state;
+        const { data = [], isLoading } = this.state;
         let res = "";
         for (let i = 0; i < data.length; i++) {
             const dataItem = data[i];
@@ -55,7 +56,7 @@ export class AssociationsPage extends React.Component {
                     </div>
                     <div id="div2">
                         <p>Слова ассоциаты:</p>
-                        <div id="result" className="ws-pre">{ res }</div>
+                        <ResultField text = {res} isLoading = {isLoading} baseClass = "ws-pre" />
                         <div>
                             <Link to="/">Перейти на стартовую страницу</Link><br/>
                             <Link to="/paraphraser">Перейти к перефразировке текста</Link>

@@ -3,6 +3,7 @@ import $ from "jquery"
 import {Link} from "react-router-dom";
 import {Header} from "../components/Header";
 import {getTextWithReplaces} from "../helpers/replaceText";
+import {ResultField} from "../components/ResultField";
 
 export class TextParaphrasePage extends React.Component {
 
@@ -31,7 +32,7 @@ export class TextParaphrasePage extends React.Component {
     }
 
     render() {
-        const { data = "" } = this.state;
+        const { data = "", isLoading } = this.state;
         return (
             <React.Fragment>
                 <Header/>
@@ -49,7 +50,7 @@ export class TextParaphrasePage extends React.Component {
                     </div>
                     <div id="div2">
                         <p>Измененный текст:</p>
-                        <div id="result" className="ws-pre-wrap">{data}</div>
+                        <ResultField text = {data} isLoading = {isLoading} baseClass = "ws-pre-wrap" />
                         <div>
                             <Link to="/">Перейти на стартовую страницу</Link><br/>
                             <Link to="/associations">Перейти к поиску ассоциатов</Link>

@@ -48,6 +48,10 @@ a:hover { color:red; }
     border: 1px solid black;
     height: 200px;
     overflow-y: auto;
+
+    &.loading {
+      background: url("../../assets/img/loading.gif") no-repeat center;
+    }
   }
 
   .ws-pre { white-space: pre; }
