@@ -1,12 +1,12 @@
 import React from "react"
-import {AssociationsPage} from "./pages/AssociationsPage";
-import {TextParaphrasePage} from "./pages/TextParaphrasePage";
-import {MainPage} from "./pages/MainPage";
-import {BrowserRouter, Route, Switch, Redirect} from "react-router-dom"
+import { AssociationsPage } from "./pages/AssociationsPage"
+import { TextParaphrasePage } from "./pages/TextParaphrasePage"
+import { MainPage } from "./pages/MainPage"
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom"
 
 export const App = () => {
-    const urlParams = new URLSearchParams(location.search);
-    const pageRequest = urlParams.get("page");
+    const urlParams = new URLSearchParams( location.search )
+    const pageRequest = urlParams.get( "page" )
     return (
         <BrowserRouter>
             <Switch>
@@ -17,9 +17,9 @@ export const App = () => {
                     <TextParaphrasePage/>
                 </Route>
                 <Route path="/">
-                    { pageRequest ? <Redirect to = {`/${pageRequest}`} /> : <MainPage/> }
+                    { pageRequest ? <Redirect to = { `/${pageRequest}` } /> : <MainPage/> }
                 </Route>
             </Switch>
         </BrowserRouter>
-    );
-};
+    )
+}
