@@ -6,6 +6,7 @@
 
 <a href="https://github.com/nikitaodnorob/rap-paraphraser">
   <img alt="Build status" src="https://github.com/nikitaodnorob/rap-paraphraser/workflows/Build/badge.svg">
+  <img alt="Build status" src="https://github.com/nikitaodnorob/rap-paraphraser/workflows/Test/badge.svg">
 </a>
 
 ### Как запустить
