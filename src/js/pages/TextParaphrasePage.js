@@ -11,12 +11,12 @@ export class TextParaphrasePage extends React.Component {
         super(props);
         this.clearField = this.clearField.bind(this);
         this.paraphraseText = this.paraphraseText.bind(this);
-        this.state = { isLoading: false, data: [] };
+        this.state = { isLoading: false, data: "" };
     }
 
     clearField() {
         $("#enterText").val("");
-        $("#result").text("");
+        this.state.data = "";
     }
 
     paraphraseText() {
@@ -40,7 +40,7 @@ export class TextParaphrasePage extends React.Component {
                     <div id="div1">
                         <p>Введите текст:</p>
                         <form>
-                            <textarea name="text" id="enterText" defaultValue="" className="size14"></textarea>
+                            <textarea name="text" id="enterText" defaultValue="" className="size14" />
                             <br/>
                             <div className="button-bar">
                                 <button type="button" className="size14" onClick={this.paraphraseText}>Отправить!</button>

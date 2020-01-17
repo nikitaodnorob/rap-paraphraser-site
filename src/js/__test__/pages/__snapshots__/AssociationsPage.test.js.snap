@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test of AssociationsPage component AssociationsPage component render 1`] = `
+Array [
+  <h1>
+    Rap-Paraphraser
+  </h1>,
+  <p
+    id="p1"
+  >
+    Добро пожаловать на сайт для перефразирования текста любого типа (в том числе и одного слова) в семантическом поле русского репа с добавлением реп-сленга. Алгоритм перефразирования основан на использовании нейронной сети Word2Vec, обученной на текстах более, чем 9500 песен русских исполнителей, которая находит близкие по семантике слова в контексте русского репа.
+  </p>,
+  <div
+    className="size14 main-div"
+  >
+    <div
+      id="div1"
+    >
+      <p>
+        Введите слово:
+      </p>
+      <form>
+        <input
+          className="size14"
+          defaultValue=""
+          id="enterWord"
+          name="word"
+          type="text"
+        />
+        <br />
+        <div
+          className="button-bar"
+        >
+          <button
+            className="size14"
+            onClick={[Function]}
+            type="button"
+          >
+            Поиск
+          </button>
+          <button
+            className="size14"
+            onClick={[Function]}
+            type="button"
+          >
+            Очистить
+          </button>
+        </div>
+      </form>
+    </div>
+    <div
+      id="div2"
+    >
+      <p>
+        Слова ассоциаты:
+      </p>
+      <div
+        className="ws-pre"
+        id="result"
+      >
+        
+      </div>
+      <div>
+        <a
+          href="/"
+          onClick={[Function]}
+        >
+          Перейти на стартовую страницу
+        </a>
+        <br />
+        <a
+          href="/paraphraser"
+          onClick={[Function]}
+        >
+          Перейти к перефразировке текста
+        </a>
+      </div>
+    </div>
+  </div>,
+]
+`;

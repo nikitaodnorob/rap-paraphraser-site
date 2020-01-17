@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test of ResultField component ResultField component render with class 1`] = `
+<div
+  className="testClass"
+  id="result"
+>
+  
+</div>
+`;
+
+exports[`Test of ResultField component ResultField component render with class and loading 1`] = `
+<div
+  className="testClass loading"
+  id="result"
+>
+  
+</div>
+`;
+
+exports[`Test of ResultField component ResultField component render with class, text and loading 1`] = `
+<div
+  className="testClass loading"
+  id="result"
+>
+  testText
+</div>
+`;
+
+exports[`Test of ResultField component ResultField component render with text 1`] = `
+<div
+  className=""
+  id="result"
+>
+  testText
+</div>
+`;
+
+exports[`Test of ResultField component ResultField component render without props 1`] = `
+<div
+  className=""
+  id="result"
+>
+  
+</div>
+`;

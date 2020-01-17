@@ -15,7 +15,7 @@ export class AssociationsPage extends React.Component {
 
     clearField() {
         $("#enterWord").val("");
-        $("#result").text("");
+        this.state.data = [];
     }
 
     searchAssociates() {
