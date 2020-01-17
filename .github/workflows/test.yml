@@ -19,4 +19,4 @@ jobs:
         run: yarn
 
       - name: Test application
-        run: yarn test
+        uses: stefanoeb/jest-action@1.0.2

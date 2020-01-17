@@ -1,8 +1,8 @@
 name: Build
 on:
   push:
-   branches:
-     - master
+    branches:
+      - master
   pull_request:
     branches:
       - master
@@ -14,9 +14,9 @@ jobs:
     steps:
       - name: Clone repository
         uses: actions/checkout@master
-      
+
       - name: Install packages
         run: yarn
-      
+
       - name: Build application
         run: yarn build
