@@ -1,9 +1,9 @@
 import React from "react"
-import $ from "jquery"
 import { Link } from "react-router-dom"
 import { Header } from "../components/Header"
 import { getTextWithReplaces } from "../helpers/replaceText"
 import { ResultField } from "../components/ResultField"
+import axios from "axios"
 
 export class TextParaphrasePage extends React.Component {
 
@@ -15,23 +15,22 @@ export class TextParaphrasePage extends React.Component {
     }
 
     clearField() {
-        $( "#enterText" ).val( "" )
-        this.state.data = ""
+        document.querySelector( "#enterText" ).value = ""
+        this.setState( { data: "" } )
+
     }
 
     paraphraseText() {
-        const text = $( "#enterText" ).val()
+        const text = document.querySelector( "#enterText" ).value
         this.setState( { isLoading: true } )
-        $.ajax( "cgi-bin/rephrase.py", {
-            data: { text },
-            method: "POST",
-            success: ( data ) => {
-                this.setState( {
-                    data: getTextWithReplaces( text, JSON.parse( data ) ),
+        axios
+            .post( "cgi-bin/rephrase.py", `text=${ text }` )
+            .then(
+                response => this.setState( {
+                    data: getTextWithReplaces( text, response.data ),
                     isLoading: false,
                 } )
-            },
-        } )
+            )
     }
 
     render() {

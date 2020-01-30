@@ -1,4 +1,4 @@
-/* global describe, test, expect */
+/* global describe, test, expect, beforeAll */
 import React from "react"
 import renderer from "react-test-renderer"
 import Enzyme, { mount } from "enzyme"
@@ -9,6 +9,12 @@ import { BrowserRouter } from "react-router-dom"
 Enzyme.configure( { adapter: new Adapter() } )
 
 describe( "Test of TextParaphrasePage component", () => {
+
+    beforeAll( () => {
+        const div = document.createElement( "div" )
+        window.domNode = div
+        document.body.appendChild( div )
+    } )
 
     test( "TextParaphrasePage component render", () => {
         const component = renderer.create(
@@ -59,7 +65,8 @@ describe( "Test of TextParaphrasePage component", () => {
         const component = mount(
             <BrowserRouter>
                 <TextParaphrasePage/>
-            </BrowserRouter>
+            </BrowserRouter>,
+            { attachTo: window.domNode }
         )
 
         component.find( "TextParaphrasePage" ).setState( { data: "rephrased text" } )

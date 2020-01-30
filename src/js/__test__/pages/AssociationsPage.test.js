@@ -1,4 +1,4 @@
-/* global describe, test, expect */
+/* global describe, test, expect, beforeAll */
 import React from "react"
 import renderer from "react-test-renderer"
 import Enzyme, { mount } from "enzyme"
@@ -9,6 +9,12 @@ import { BrowserRouter } from "react-router-dom"
 Enzyme.configure( { adapter: new Adapter() } )
 
 describe( "Test of AssociationsPage component", () => {
+
+    beforeAll( () => {
+        const div = document.createElement( "div" )
+        window.domNode = div
+        document.body.appendChild( div )
+    } )
 
     test( "AssociationsPage component render", () => {
         const component = renderer.create(
@@ -65,7 +71,8 @@ describe( "Test of AssociationsPage component", () => {
         const component = mount(
             <BrowserRouter>
                 <AssociationsPage/>
-            </BrowserRouter>
+            </BrowserRouter>,
+            { attachTo: window.domNode }
         )
 
         const data = [

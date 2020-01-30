@@ -1,8 +1,8 @@
 import React from "react"
-import $ from "jquery"
 import { Link } from "react-router-dom"
 import { Header } from "../components/Header"
 import { ResultField } from "../components/ResultField"
+import axios from "axios"
 
 export class AssociationsPage extends React.Component {
 
@@ -14,20 +14,16 @@ export class AssociationsPage extends React.Component {
     }
 
     clearField() {
-        $( "#enterWord" ).val( "" )
-        this.state.data = []
+        document.querySelector( "#enterWord" ).value = ""
+        this.setState( { data: [] } )
     }
 
     searchAssociates() {
-        const word = $( "#enterWord" ).val()
+        const word = document.querySelector( "#enterWord" ).value
         this.setState( { isLoading: true } )
-        $.ajax( "cgi-bin/associate.py", {
-            data: { word },
-            method: "GET",
-            success: ( data ) => {
-                this.setState( { data: JSON.parse( data ), isLoading: false } )
-            },
-        } )
+        axios
+            .get( "cgi-bin/associate.py", { params: { word } } )
+            .then( response => this.setState( { data: response.data, isLoading: false } ) )
     }
 
     render() {
