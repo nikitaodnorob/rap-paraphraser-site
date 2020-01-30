@@ -1,8 +1,9 @@
-/* global describe, test, expect, beforeAll */
+/* global describe, test, expect, beforeEach, afterEach */
 import React from "react"
 import renderer from "react-test-renderer"
 import Enzyme, { mount } from "enzyme"
 import Adapter from "enzyme-adapter-react-16"
+import axios from "axios"
 import { AssociationsPage } from "../../pages/AssociationsPage"
 import { BrowserRouter } from "react-router-dom"
 
@@ -10,10 +11,15 @@ Enzyme.configure( { adapter: new Adapter() } )
 
 describe( "Test of AssociationsPage component", () => {
 
-    beforeAll( () => {
+    beforeEach( () => {
         const div = document.createElement( "div" )
-        window.domNode = div
+        div.setAttribute( "id", "testContainer" )
         document.body.appendChild( div )
+    } )
+
+    afterEach( () => {
+        const div = document.querySelector( "#testContainer" )
+        if ( div ) document.body.removeChild( div )
     } )
 
     test( "AssociationsPage component render", () => {
@@ -72,7 +78,7 @@ describe( "Test of AssociationsPage component", () => {
             <BrowserRouter>
                 <AssociationsPage/>
             </BrowserRouter>,
-            { attachTo: window.domNode }
+            { attachTo: document.querySelector( "#testContainer" ) }
         )
 
         const data = [
@@ -83,6 +89,35 @@ describe( "Test of AssociationsPage component", () => {
         component.find( ".button-bar button" ).at( 1 ).simulate( "click" )
 
         expect( component.find( "AssociationsPage" ).state().data ).toHaveLength( 0 )
+    } )
+
+    test ( "searchAssociates function is working", () => {
+        const component = mount(
+            <BrowserRouter>
+                <AssociationsPage/>
+            </BrowserRouter>,
+            { attachTo: document.querySelector( "#testContainer" ) }
+        )
+
+        document.querySelector( "#enterWord" ).value = "testWord"
+
+        let getURL = "", getConfig = {}
+
+        const testGetPromise = new Promise( ( resolve ) => {
+            return resolve( { response: { data: [ "testResult" ] } } )
+        } )
+
+        // Заменяем axios.get для проверки корректности параметров
+        axios.get = ( url, config ) => {
+            getURL = url
+            getConfig = config
+            return testGetPromise
+        }
+
+        component.find( ".button-bar button" ).at( 0 ).simulate( "click" )
+
+        expect( getURL ).toEqual( "cgi-bin/associate.py" )
+        expect( getConfig ).toEqual( { params: { word: "testWord" } } )
     } )
 
 } )

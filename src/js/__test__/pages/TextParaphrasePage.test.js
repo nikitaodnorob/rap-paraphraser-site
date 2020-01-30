@@ -1,8 +1,9 @@
-/* global describe, test, expect, beforeAll */
+/* global describe, test, expect, beforeEach, afterEach */
 import React from "react"
 import renderer from "react-test-renderer"
 import Enzyme, { mount } from "enzyme"
 import Adapter from "enzyme-adapter-react-16"
+import axios from "axios"
 import { TextParaphrasePage } from "../../pages/TextParaphrasePage"
 import { BrowserRouter } from "react-router-dom"
 
@@ -10,10 +11,15 @@ Enzyme.configure( { adapter: new Adapter() } )
 
 describe( "Test of TextParaphrasePage component", () => {
 
-    beforeAll( () => {
+    beforeEach( () => {
         const div = document.createElement( "div" )
-        window.domNode = div
+        div.setAttribute( "id", "testContainer" )
         document.body.appendChild( div )
+    } )
+
+    afterEach( () => {
+        const div = document.querySelector( "#testContainer" )
+        if ( div ) document.body.removeChild( div )
     } )
 
     test( "TextParaphrasePage component render", () => {
@@ -66,13 +72,42 @@ describe( "Test of TextParaphrasePage component", () => {
             <BrowserRouter>
                 <TextParaphrasePage/>
             </BrowserRouter>,
-            { attachTo: window.domNode }
+            { attachTo: document.querySelector( "#testContainer" ) }
         )
 
         component.find( "TextParaphrasePage" ).setState( { data: "rephrased text" } )
         component.find( ".button-bar button" ).at( 1 ).simulate( "click" )
 
         expect( component.find( "TextParaphrasePage" ).state().data ).toEqual( "" )
+    } )
+
+    test ( "searchAssociates function is working", () => {
+        const component = mount(
+            <BrowserRouter>
+                <TextParaphrasePage/>
+            </BrowserRouter>,
+            { attachTo: document.querySelector( "#testContainer" ) }
+        )
+
+        document.querySelector( "#enterText" ).value = "testText"
+
+        let postURL = "", postData = {}
+
+        const testPostPromise = new Promise( ( resolve ) => {
+            return resolve( { response: { data: "testResult" } } )
+        } )
+
+        // Заменяем axios.post для проверки корректности параметров
+        axios.post = ( url, data ) => {
+            postURL = url
+            postData = data
+            return testPostPromise
+        }
+
+        component.find( ".button-bar button" ).at( 0 ).simulate( "click" )
+
+        expect( postURL ).toEqual( "cgi-bin/rephrase.py" )
+        expect( postData ).toEqual( "text=testText" )
     } )
 
 } )

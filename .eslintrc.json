@@ -24,7 +24,6 @@
     "no-undef": "error",
     "react/jsx-uses-react": "warn",
     "max-statements-per-line": [ "warn", { "max": 2 } ],
-    "no-trailing-spaces": "warn",
     "camelcase": "error",
     "max-len": [ "error", { "code": 100 } ],
     "object-curly-spacing": [ "warn", "always" ],
