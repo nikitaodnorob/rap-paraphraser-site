@@ -1,6 +1,6 @@
-import React from "react"
-import { Link } from "react-router-dom"
-import { Header } from "../components/Header"
+import React from 'react';
+import {Link} from 'react-router-dom';
+import {Header} from '../components/Header';
 
 export const MainPage = () => {
     return (
@@ -11,7 +11,6 @@ export const MainPage = () => {
                 <Link to="/paraphraser">перефразировать текст</Link><br/>
                 <Link to="/associations">подобрать слова-ассоциаты</Link>
             </p>
-            { /*<p className="center">а так же просмотреть примеры:</p>*/ }
         </>
-    )
-}
+    );
+};
