@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: Install eslint
-        run: yarn add eslint eslint-plugin-react
+        run: npm i eslint eslint-plugin-react
 
       - name: Run eslint
-        run: yarn lint
+        run: npm run lint

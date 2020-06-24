@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: Install packages
-        run: yarn
+        run: npm ci
 
       - name: Test application
-        run: yarn test
+        run: npm run test
