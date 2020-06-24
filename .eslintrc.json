@@ -12,6 +12,7 @@
     "ecmaVersion": 2015
   },
   "plugins": [ "react" ],
+  "ignorePatterns": [ "webpack.config.js" ],
   "rules": {
     "indent": [ "error", 4 ],
     "comma-dangle": [ "warn", "always-multiline" ],
@@ -36,6 +37,7 @@
     "react/jsx-curly-spacing": [ "error", { "when": "never", "children": true } ],
     "no-trailing-spaces": "error",
     "eol-last": [ "error", "always" ],
-    "template-curly-spacing": [ "error", "never" ]
+    "template-curly-spacing": [ "error", "never" ],
+    "linebreak-style": [ "error", "unix" ]
   }
 }
