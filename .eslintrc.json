@@ -15,8 +15,8 @@
   "rules": {
     "indent": [ "error", 4 ],
     "comma-dangle": [ "warn", "always-multiline" ],
-    "semi": [ "error", "never" ],
-    "quotes": [ "error", "double" ],
+    "semi": [ "error", "always" ],
+    "quotes": [ "error", "single" ],
     "no-unused-vars": "error",
     "react/jsx-uses-vars": "error",
     "no-redeclare": "warn",
@@ -26,13 +26,16 @@
     "max-statements-per-line": [ "warn", { "max": 2 } ],
     "camelcase": "error",
     "max-len": [ "error", { "code": 100 } ],
-    "object-curly-spacing": [ "warn", "always" ],
-    "array-bracket-spacing": [ "warn", "always" ],
+    "object-curly-spacing": [ "warn", "never" ],
+    "array-bracket-spacing": [ "warn", "never" ],
     "semi-spacing": "error",
     "comma-spacing": "error",
     "block-spacing": "error",
-    "computed-property-spacing": [ "error", "always" ],
-    "space-in-parens": [ "error", "always" ],
-    "react/jsx-curly-spacing": [ "error", { "when": "always", "children": true } ]
+    "computed-property-spacing": [ "error", "never" ],
+    "space-in-parens": [ "error", "never" ],
+    "react/jsx-curly-spacing": [ "error", { "when": "never", "children": true } ],
+    "no-trailing-spaces": "error",
+    "eol-last": [ "error", "always" ],
+    "template-curly-spacing": [ "error", "never" ]
   }
 }

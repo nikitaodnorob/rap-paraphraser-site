@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react';
 
 export const Header = () => {
     return (
@@ -12,5 +12,5 @@ export const Header = () => {
                 семантике слова в контексте русского репа.
             </p>
         </>
-    )
-}
+    );
+};
