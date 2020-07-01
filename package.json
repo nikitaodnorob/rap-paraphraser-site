@@ -30,7 +30,7 @@
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "eslint": "^7.2.0",
-    "eslint-plugin-react": "^7.20.2",
+    "eslint-plugin-react": "^7.20.3",
     "jest-cli": "^26.1.0",
     "react-test-renderer": "^16.12.0",
     "webpack-cli": "^3.3.10"
