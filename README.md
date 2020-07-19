@@ -7,7 +7,9 @@
 <a href="https://github.com/nikitaodnorob/rap-paraphraser">
   <img alt="Build status" src="https://github.com/nikitaodnorob/rap-paraphraser/workflows/Build/badge.svg">
   <img alt="Build status" src="https://github.com/nikitaodnorob/rap-paraphraser/workflows/Test/badge.svg">
-</a>
+</a><br/>
+
+Список изменений (changelog): [CHANGELOG.MD](https://github.com/nikitaodnorob/rap-paraphraser/blob/master/CHANGELOG.md)
 
 ### Как запустить
 
