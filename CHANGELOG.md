@@ -1,5 +1,15 @@
 ## CHANGELOG
 
+v1.2.6 - August 8, 2020
+* [`35820cc`](https://github.com/nikitaodnorob/rap-paraphraser/commit/35820cc4777912aeb4003c2fed4e3a3aaea91131) Upgrade `@babel/preset-env@7.11.0`
+* [`b2858c2`](https://github.com/nikitaodnorob/rap-paraphraser/commit/b2858c2cec7e06eede2828365cb6d9e52767dc15) Upgrade `@babel/core@7.11.0`
+* [`e4a6088`](https://github.com/nikitaodnorob/rap-paraphraser/commit/e4a60887123d69ddbf63170b196c18a13dcd9bba) Upgrade `css-loader@4.1.1`
+* [`424a640`](https://github.com/nikitaodnorob/rap-paraphraser/commit/424a640cea6efeac2eb85c88abead4471ec8f59d) Upgrade `webpack@4.44.1`
+* [`faaab40`](https://github.com/nikitaodnorob/rap-paraphraser/commit/faaab40272db5609038e1fe8319be2b9024fe132) Upgrade `@jest/globals@26.2.0`
+* [`ece5ea4`](https://github.com/nikitaodnorob/rap-paraphraser/commit/ece5ea4d396beaf6c91cb2e0eacf194ee3030b84) Upgrade `jest-cli@26.2.2`
+* [`ec3a389`](https://github.com/nikitaodnorob/rap-paraphraser/commit/ec3a3894f3ad330c5ed89fc9f53511098cda45a3) Upgrade `eslint-plugin-react@7.20.5`
+* [`06dd00b`](https://github.com/nikitaodnorob/rap-paraphraser/commit/06dd00b7c518c0c261f6bde74385b46049ee5a9a) Upgrade `eslint@7.5.0`
+
 v1.2.5 - July 19, 2020
 * [`08fab74`](https://github.com/nikitaodnorob/rap-paraphraser/commit/08fab74db3c4c3e994ef54c8a5332c3a17fd9459) Added npm script `npm run server`
 * [`ec5e208`](https://github.com/nikitaodnorob/rap-paraphraser/commit/ec5e208b36674b86863e00c7b91a5ac23f063690) Upgrade `@babel/core@7.10.5`
