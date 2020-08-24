@@ -1,5 +1,12 @@
 ## CHANGELOG
 
+v1.2.8 - August 24, 2020
+* [`4a8655e`](https://github.com/nikitaodnorob/rap-paraphraser/commit/4a8655eba0f72ee0a370e58f4082b85a495b7a51) Upgrade `@jest/globals`
+* [`9390d90`](https://github.com/nikitaodnorob/rap-paraphraser/commit/9390d901cba243ef8af3c05411890199aadf433c) Upgrade `jest-cli@26.4.2`
+* [`4f0ff30`](https://github.com/nikitaodnorob/rap-paraphraser/commit/4f0ff3070d04d8254267817ee5e34b5a05dab90d) Upgrade `axios@0.20.0`
+* [`6cf74b5`](https://github.com/nikitaodnorob/rap-paraphraser/commit/6cf74b5184a4974ef201d23091a8dcf482b1aeb8) Upgrade `@babel/core@7.11.4`
+* [`5a82068`](https://github.com/nikitaodnorob/rap-paraphraser/commit/5a82068b0269c6b11bb745d8ea6a5d5574718d6b) Upgrade `eslint@7.7.0`
+
 v1.2.7 - August 14, 2020
 * [`b73b5ca`](https://github.com/nikitaodnorob/rap-paraphraser/commit/b73b5ca5f0ea152d629c7ec7b85913054eaa0718) Upgrade `@babel/core@7.11.1`
 * [`66549b9`](https://github.com/nikitaodnorob/rap-paraphraser/commit/66549b9097f6298a1a2a1825f4315e1e28114a38) **[Security]** Upgrade `lodash@4.17.20`
