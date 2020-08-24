@@ -1,7 +1,7 @@
 ## CHANGELOG
 
 v1.2.8 - August 24, 2020
-* [`4a8655e`](https://github.com/nikitaodnorob/rap-paraphraser/commit/4a8655eba0f72ee0a370e58f4082b85a495b7a51) Upgrade `@jest/globals`
+* [`4a8655e`](https://github.com/nikitaodnorob/rap-paraphraser/commit/4a8655eba0f72ee0a370e58f4082b85a495b7a51) Upgrade `@jest/globals@26.4.2`
 * [`9390d90`](https://github.com/nikitaodnorob/rap-paraphraser/commit/9390d901cba243ef8af3c05411890199aadf433c) Upgrade `jest-cli@26.4.2`
 * [`4f0ff30`](https://github.com/nikitaodnorob/rap-paraphraser/commit/4f0ff3070d04d8254267817ee5e34b5a05dab90d) Upgrade `axios@0.20.0`
 * [`6cf74b5`](https://github.com/nikitaodnorob/rap-paraphraser/commit/6cf74b5184a4974ef201d23091a8dcf482b1aeb8) Upgrade `@babel/core@7.11.4`
