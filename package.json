@@ -9,7 +9,7 @@
   "version": "1.2.8",
   "dependencies": {
     "@babel/core": "^7.11.4",
-    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
     "axios": "^0.20.0",
     "babel-core": "^6.26.3",
