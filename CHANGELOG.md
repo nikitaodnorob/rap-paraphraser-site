@@ -1,5 +1,17 @@
 ## CHANGELOG
 
+v1.2.9 - October 21, 2020
+* [`f1e0ecc`](https://github.com/nikitaodnorob/rap-paraphraser/commit/f1e0ecc967e1f991404f5730002e300104d6227e) Upgrade `css-loader@5.0.0`
+* [`bfc1f00`](https://github.com/nikitaodnorob/rap-paraphraser/commit/bfc1f000d01561eea15374348e17ec04b87a47a3) Upgrade `sass-loader@10.0.3`
+* [`1392be4`](https://github.com/nikitaodnorob/rap-paraphraser/commit/1392be45f7b96c28321f1ac4f4b2905f901dcf6a) Upgrade `file-loader@6.1.1`
+* [`0ab83fa`](https://github.com/nikitaodnorob/rap-paraphraser/commit/0ab83fa93c94d301f84ce86a642f5f712a4b32d9) Upgrade `@babel/preset-env@7.12.1`
+* [`9e9ec12`](https://github.com/nikitaodnorob/rap-paraphraser/commit/9e9ec1231b2925b2a1926a023fa3d491c15affc8) Upgrade `@babel/core@7.12.3`
+* [`3e395fa`](https://github.com/nikitaodnorob/rap-paraphraser/commit/3e395fadbcf9aa038f9a6697c71576f0a7520935) Upgrade `mini-css-extract-plugin@1.1.1`
+* [`e2fbcca`](https://github.com/nikitaodnorob/rap-paraphraser/commit/e2fbcca5c510ab4b37bd0b0597dcaa98ad0cf1b7) Upgrade `enzyme-adapter-react-16@1.15.5`
+* [`87922af`](https://github.com/nikitaodnorob/rap-paraphraser/commit/87922af17c7c37e6cb9a932738354a730f001958) Upgrade `webpack@4.44.2`
+* [`d86ce1e`](https://github.com/nikitaodnorob/rap-paraphraser/commit/d86ce1e2eefe25b29cae89ee9ca5de8427d466cf) Upgrade `eslint@7.11.0`
+* [`96b1953`](https://github.com/nikitaodnorob/rap-paraphraser/commit/96b1953f6d72ca7922db5b3bf8b6340ce479c58c) Upgrade `eslint-plugin-react@7.21.5`
+
 v1.2.8 - August 24, 2020
 * [`4a8655e`](https://github.com/nikitaodnorob/rap-paraphraser/commit/4a8655eba0f72ee0a370e58f4082b85a495b7a51) Upgrade `@jest/globals@26.4.2`
 * [`9390d90`](https://github.com/nikitaodnorob/rap-paraphraser/commit/9390d901cba243ef8af3c05411890199aadf433c) Upgrade `jest-cli@26.4.2`
