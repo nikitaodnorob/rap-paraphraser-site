@@ -18,7 +18,7 @@
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.10.4",
-    "@jest/globals": "^26.4.2",
+    "@jest/globals": "^26.6.2",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.6",
     "css-loader": "^5.0.0",
