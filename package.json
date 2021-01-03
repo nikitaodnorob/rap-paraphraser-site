@@ -27,7 +27,7 @@
     "enzyme-adapter-react-16": "^1.15.5",
     "eslint": "^7.11.0",
     "eslint-plugin-react": "^7.21.5",
-    "jest-cli": "^26.4.2",
+    "jest-cli": "^26.6.3",
     "mini-css-extract-plugin": "^1.1.1",
     "node-sass": "^4.13.1",
     "path": "^0.12.7",
