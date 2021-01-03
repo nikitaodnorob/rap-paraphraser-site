@@ -15,7 +15,7 @@
     "react-router-dom": "^5.1.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.3",
+    "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.10.4",
     "@jest/globals": "^26.4.2",
