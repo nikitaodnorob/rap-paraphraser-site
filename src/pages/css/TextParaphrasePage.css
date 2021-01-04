@@ -1,0 +1,23 @@
+.main-div { display: flex; font-size: 18px; }
+
+.main-div > div { width: 50% }
+.main-div > div:nth-of-type(1) { padding-right: 10px; }
+.main-div > div:nth-of-type(2) { padding-left: 10px; }
+
+.button-bar {
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.button-bar button { margin: 5px 5px; }
+
+button, input, textarea { font-size: 18px; }
+
+.enter-text {
+    width: 100%;
+    height: 200px;
+    resize: none;
+}
+
+.ws-pre-wrap { white-space: pre-wrap; }
