@@ -1,5 +1,4 @@
 import {getTextWithReplaces} from '../../helpers/replaceText';
-import {describe, expect, test} from '@jest/globals';
 
 describe('Test of getTextWithReplaces', () => {
 

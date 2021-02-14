@@ -1,8 +1,8 @@
 import React from 'react';
+import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
 import {AssociationsPage} from './pages/AssociationsPage';
 import {TextParaphrasePage} from './pages/TextParaphrasePage';
 import {MainPage} from './pages/MainPage';
-import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
 
 export const App = () => {
     const urlParams = new URLSearchParams(location.search);

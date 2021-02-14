@@ -10,6 +10,6 @@ export const ResultField = (props) => {
         'loading': isLoading,
     });
     return (
-        <div className={classes}>{text}</div>
+        <div className={classes.trim()}>{text}</div>
     );
 };

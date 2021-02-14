@@ -2,26 +2,19 @@
 
 exports[`Test of ResultField component ResultField component render with class 1`] = `
 <div
-  className="testClass"
-  id="result"
->
-  
-</div>
+  class="testClass result"
+/>
 `;
 
 exports[`Test of ResultField component ResultField component render with class and loading 1`] = `
 <div
-  className="testClass loading"
-  id="result"
->
-  
-</div>
+  class="testClass result loading"
+/>
 `;
 
 exports[`Test of ResultField component ResultField component render with class, text and loading 1`] = `
 <div
-  className="testClass loading"
-  id="result"
+  class="testClass result loading"
 >
   testText
 </div>
@@ -29,8 +22,7 @@ exports[`Test of ResultField component ResultField component render with class, 
 
 exports[`Test of ResultField component ResultField component render with text 1`] = `
 <div
-  className=""
-  id="result"
+  class="result"
 >
   testText
 </div>
@@ -38,9 +30,6 @@ exports[`Test of ResultField component ResultField component render with text 1`
 
 exports[`Test of ResultField component ResultField component render without props 1`] = `
 <div
-  className=""
-  id="result"
->
-  
-</div>
+  class="result"
+/>
 `;

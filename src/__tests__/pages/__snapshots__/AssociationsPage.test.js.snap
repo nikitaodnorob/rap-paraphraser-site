@@ -1,45 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test of TextParaphrasePage component TextParaphrasePage component render 1`] = `
-Array [
+exports[`Test of AssociationsPage component AssociationsPage component render 1`] = `
+<div>
   <h1>
     Rap-Paraphraser
-  </h1>,
-  <p
-    id="p1"
-  >
+  </h1>
+  <p>
     Добро пожаловать на сайт для перефразирования текста любого типа (в том числе и одного слова) в семантическом поле русского репа с добавлением реп-сленга. Алгоритм перефразирования основан на использовании нейронной сети Word2Vec, обученной на текстах более, чем 9500 песен русских исполнителей, которая находит близкие по семантике слова в контексте русского репа.
-  </p>,
+  </p>
   <div
-    className="size14 main-div"
+    class="main-div"
   >
-    <div
-      id="div1"
-    >
+    <div>
       <p>
-        Введите текст:
+        Введите слово:
       </p>
       <form>
-        <textarea
-          className="size14"
-          defaultValue=""
-          id="enterText"
-          name="text"
+        <input
+          class="enter-word"
+          name="word"
+          type="text"
         />
         <br />
         <div
-          className="button-bar"
+          class="button-bar"
         >
           <button
-            className="size14"
-            onClick={[Function]}
             type="button"
           >
-            Отправить!
+            Поиск
           </button>
           <button
-            className="size14"
-            onClick={[Function]}
             type="button"
           >
             Очистить
@@ -47,34 +38,27 @@ Array [
         </div>
       </form>
     </div>
-    <div
-      id="div2"
-    >
+    <div>
       <p>
-        Измененный текст:
+        Слова ассоциаты:
       </p>
       <div
-        className="ws-pre-wrap"
-        id="result"
-      >
-        
-      </div>
+        class="ws-pre result"
+      />
       <div>
         <a
           href="/"
-          onClick={[Function]}
         >
           Перейти на стартовую страницу
         </a>
         <br />
         <a
-          href="/associations"
-          onClick={[Function]}
+          href="/paraphraser"
         >
-          Перейти к поиску ассоциатов
+          Перейти к перефразировке текста
         </a>
       </div>
     </div>
-  </div>,
-]
+  </div>
+</div>
 `;
