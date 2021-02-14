@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import {LoadingIndicator} from './LoadingIndicator';
 import './css/ResultField.css';
 
 export const ResultField = (props) => {
@@ -10,6 +11,10 @@ export const ResultField = (props) => {
         'loading': isLoading,
     });
     return (
-        <div className={classes.trim()}>{text}</div>
+        <div className={classes.trim()}>
+            {
+                isLoading ? <LoadingIndicator /> : text
+            }
+        </div>
     );
 };
