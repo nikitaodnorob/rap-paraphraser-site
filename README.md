@@ -13,7 +13,7 @@
 
 ### Как запустить
 
-Бекенд проекта находится в отдельном [репозитории](https://github.com/nikitaodnorob/rap-paraphraser-backend) и развернут на Heroku.
+Бекенд проекта находится в отдельном [репозитории](https://github.com/nikitaodnorob/rap-paraphraser-backend) и развернут на Heroku по адресу https://rap-paraphraser.herokuapp.com/
 
 Для запуска фронтенда выполните:
 * `git clone`
