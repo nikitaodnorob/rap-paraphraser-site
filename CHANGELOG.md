@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+v2.1.0 - February 14, 2021
+* Added loading indicator
+* Converted class components to functional components
+
 v2.0.0 - February 14, 2021
 * Removed backend from this repository to separate one
 * Attached `react-scripts`

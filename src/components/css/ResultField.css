@@ -3,7 +3,3 @@
     height: 200px;
     overflow-y: auto;
 }
-
-.result.loading {
-     /*background: url("../../assets/img/loading.gif") no-repeat center;*/
- }
