@@ -1,5 +1,10 @@
 ## CHANGELOG
 
+v2.0.0 - February 14, 2021
+* Removed backend from this repository to separate one
+* Attached `react-scripts`
+* Replaced `axios` by `fetch`
+
 v1.2.9 - October 21, 2020
 * [`f1e0ecc`](https://github.com/nikitaodnorob/rap-paraphraser/commit/f1e0ecc967e1f991404f5730002e300104d6227e) Upgrade `css-loader@5.0.0`
 * [`bfc1f00`](https://github.com/nikitaodnorob/rap-paraphraser/commit/bfc1f000d01561eea15374348e17ec04b87a47a3) Upgrade `sass-loader@10.0.3`
