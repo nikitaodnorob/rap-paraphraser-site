@@ -1,3 +1,0 @@
-gensim==3.7.2
-pymorphy2==0.8
-pymorphy2-dicts==2.4.393442.3710985
