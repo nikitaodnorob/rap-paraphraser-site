@@ -5,13 +5,15 @@
     "jest": true,
     "node": true
   },
+  "parser": "babel-eslint",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true,
       "modules": true
     },
     "sourceType": "module",
-    "ecmaVersion": 2015
+    "ecmaVersion": 2015,
+    "allowImportExportEverywhere": true
   },
   "plugins": [ "react" ],
   "ignorePatterns": [ "webpack.config.js" ],
