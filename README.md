@@ -12,8 +12,9 @@
 Список изменений (changelog): [CHANGELOG.MD](https://github.com/nikitaodnorob/rap-paraphraser/blob/master/CHANGELOG.md)
 
 ### Как запустить
+Фронтенд проекта разернут на Heroku по адресу https://rap-paraphraser.herokuapp.com/
 
-Бекенд проекта находится в отдельном [репозитории](https://github.com/nikitaodnorob/rap-paraphraser-backend) и развернут на Heroku по адресу https://rap-paraphraser.herokuapp.com/
+Бекенд проекта находится в отдельном [репозитории](https://github.com/nikitaodnorob/rap-paraphraser-backend) и развернут на Heroku по адресу https://rap-paraphraser-backend.herokuapp.com/
 
 Для запуска фронтенда выполните:
 * `git clone`
