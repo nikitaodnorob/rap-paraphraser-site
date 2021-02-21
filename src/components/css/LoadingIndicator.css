@@ -7,8 +7,8 @@
 
 .circular-loader {
     animation: rotate 2s linear infinite;
-    width: 30%;
-    height: 70%;
+    width: 100px;
+    height: 100px;
     transform-origin: center center;
 }
 
