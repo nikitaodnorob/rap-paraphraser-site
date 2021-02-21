@@ -1,5 +1,10 @@
 ## CHANGELOG
 
+v2.1.1 - February 21, 2021
+* [`bb01a78`](https://github.com/nikitaodnorob/rap-paraphraser/commit/bb01a782c4c608b88be1535f6cdf269f61ba426f) Upgrade `eslint@7.19.0`
+* [`909ebba`](https://github.com/nikitaodnorob/rap-paraphraser/commit/909ebba6b65ba87afd54537fda843227d5e99856) Fix: sizes of loading indicator
+* [`da55552`](https://github.com/nikitaodnorob/rap-paraphraser/commit/da55552ff27fa13ff5ba40db3f56ca0ff5d34437) Fix: added the indicator of searching associate error
+
 v2.1.0 - February 14, 2021
 * Added loading indicator
 * Converted class components to functional components
