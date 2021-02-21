@@ -7,6 +7,7 @@ import './css/AssociationsPage.css';
 
 export const AssociationsPage = () => {
     const [isLoading, setLoading] = useState(false);
+    const [hasError, setError] = useState(false);
     const [data, setData] = useState([]);
     const searchFieldRef = useRef(null);
 
@@ -18,9 +19,14 @@ export const AssociationsPage = () => {
     const searchAssociates = async () => {
         const word = searchFieldRef.current.value;
         setLoading(true);
+        setError(false);
 
-        const result = await api.searchAssociates(word);
-        setData(result);
+        try {
+            const result = await api.searchAssociates(word);
+            setData(result);
+        } catch {
+            setError(true);
+        }
         setLoading(false);
     };
 
@@ -48,7 +54,11 @@ export const AssociationsPage = () => {
                 </div>
                 <div>
                     <p>Слова ассоциаты:</p>
-                    <ResultField text={resText} isLoading={isLoading} baseClass="ws-pre" />
+                    <ResultField
+                        text={hasError ? 'Произошла ошибка' : resText}
+                        isLoading={isLoading}
+                        baseClass="ws-pre"
+                    />
                     <div>
                         <Link to="/">Перейти на стартовую страницу</Link><br />
                         <Link to="/paraphraser">Перейти к перефразировке текста</Link>
