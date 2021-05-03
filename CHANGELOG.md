@@ -1,5 +1,18 @@
 ## CHANGELOG
 
+v2.1.2 - May 3, 2021
+* [`3bf050b`](https://github.com/nikitaodnorob/rap-paraphraser/commit/3bf050bcf88d9f1966395b5f7854c1ab58abc9db) **[Security]** Upgrade `elliptic@6.5.4`
+* [`11167ac`](https://github.com/nikitaodnorob/rap-paraphraser/commit/11167acd8aa9ff6cb3a75df5a71d2f3e08b4813a) Upgrade `@testing-library/react@11.2.6`
+* [`2af6112`](https://github.com/nikitaodnorob/rap-paraphraser/commit/2af611287005559afbe3fab845e16b2013277a06) Upgrade `classnames@2.3.1`
+* [`6b208a6`](https://github.com/nikitaodnorob/rap-paraphraser/commit/6b208a659d23a4f53361e8a68ffaf658eec83059) Upgrade `react@17.0.2 and react-dom@17.0.2`
+* [`145dc34`](https://github.com/nikitaodnorob/rap-paraphraser/commit/145dc340b6ac88610d115485ccc4033f28129821) **[Security]** Upgrade `ssri@6.0.2`
+* [`47d33e8`](https://github.com/nikitaodnorob/rap-paraphraser/commit/47d33e8d8e358d69bdac7500e98f421847b6ba24) Upgrade `react-dev-utils@11.0.4`
+* [`db281b4`](https://github.com/nikitaodnorob/rap-paraphraser/commit/db281b445ac21ca1b6ca3280b9343eeb2cacee99) Upgrade `web-vitals@1.1.1`
+* [`009bb94`](https://github.com/nikitaodnorob/rap-paraphraser/commit/009bb94693b9e74c1fe494b7ec13f35730a8e06a) Upgrade `@testing-library/user-event@13.1.5`
+* [`cbb782c`](https://github.com/nikitaodnorob/rap-paraphraser/commit/cbb782c0df308e19aacd5788191e29afb887ad2f) Upgrade `@testing-library/jest-dom@5.12.0`
+* [`9bd8ebb`](https://github.com/nikitaodnorob/rap-paraphraser/commit/9bd8ebb56a7fb6b7c6b57a1de6848b650e173068) Upgrade `react-scripts@4.0.3`
+* [`31ff62b`](https://github.com/nikitaodnorob/rap-paraphraser/commit/31ff62ba45ec6c76304d237bd803a10cbbb3bcf0) Upgrade `@testing-library/react@11.2.5`
+
 v2.1.1 - February 21, 2021
 * [`bb01a78`](https://github.com/nikitaodnorob/rap-paraphraser/commit/bb01a782c4c608b88be1535f6cdf269f61ba426f) Upgrade `eslint@7.19.0`
 * [`909ebba`](https://github.com/nikitaodnorob/rap-paraphraser/commit/909ebba6b65ba87afd54537fda843227d5e99856) Fix: sizes of loading indicator
